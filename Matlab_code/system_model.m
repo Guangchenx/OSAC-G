@@ -16,7 +16,6 @@ tau_c = 200; % each coherence interval
 etak = 10; % QoS requirement at user k in Mbps
 [U,S,V]=svd(randn(tau_p,tau_p)); % U(tau x tau) is unitary matrix includes tau orthogonal sequences(both columns and rows) 
 
-
 k_b = 1.381*10^(-23); %Boltzmann constant in j/k
 B_1 =  B*10^6; %Bandwith in Hz
 n_f = 10^(9/10) ; %Noise figure 9dB
@@ -26,7 +25,6 @@ Pp = 0.2*tau_p;%pilot power
 p_bh = 0.6; % Traffic-dependent power coefficient in W/Gbps
 p_fix = 0.3; % Fixed RF chain power in W
 p_tx = 0.3; % Maximum transmit power in W
-
 
 Hb = 10; % Base station height in m
 Hm = 1.65; % Mobile height in m
@@ -38,8 +36,7 @@ L = 46.3+33.9*log10(f)-13.82*log10(Hb)-aL;
 
 
 
-%%
-
+%% Iterations
 N1=1; %Number of iterations
 Rate_greedy = zeros(N1,K);
 R_1 = zeros(N1,K);
@@ -134,14 +131,11 @@ for n=1:N
     end
 end
 
-
 for n=1:N
     for k=1:K
         Gammaa(n,k)=Pp*BETAA(n,k)^2/(Pp*mau(n,k) + noise_p);
     end
 end
-
-
 
 end
 
