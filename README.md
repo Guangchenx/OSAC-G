@@ -15,5 +15,5 @@ The python code includes: Actor, Critic, GTN and SAM.
 
 ## matlab_code 
 
-The matlab code includes: system model  (data generation).
+The matlab code includes: System model (data generation).
 
